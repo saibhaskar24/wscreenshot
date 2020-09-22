@@ -5,13 +5,13 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name='wscreenshot',
-    version='0.0.1',
+    version='0.0.3',
     packages=setuptools.find_packages(),
     url='https://github.com/saibhaskar24/wscreenshot',
     license='MIT License',
     author='saibhaskar',
     author_email='saibaaskar24091999@gmail.com',
-    description='wscreenshot is a package which helps you to take screenshot in windos os easyly it has lots of feature than a simple screenshot.',
+    description='This package which helps you to take screenshot of specific running window',
     long_description=long_description,
     long_description_content_type="text/markdown",
     classifiers=[
