@@ -5,10 +5,6 @@ class Screenshot:
     w = 0
     h = 0
     hwnd = None
-    cropped_x = 0
-    cropped_y = 0
-    offset_x = 0
-    offset_y = 0
 
     # constructor
     def __init__(self, window_name = None):
@@ -39,7 +35,7 @@ class Screenshot:
             dataBitMap = win32ui.CreateBitmap()
             dataBitMap.CreateCompatibleBitmap(dcObj, self.w, self.h)
             cDC.SelectObject(dataBitMap)
-            cDC.BitBlt((0, 0), (self.w, self.h), dcObj, (self.cropped_x, self.cropped_y), win32con.SRCCOPY)
+            cDC.BitBlt((0, 0), (self.w, self.h), dcObj, (0,0), win32con.SRCCOPY)
             signedIntsArray = dataBitMap.GetBitmapBits(True)
             img = np.fromstring(signedIntsArray, dtype='uint8')
             img.shape = (self.h, self.w, 4)
